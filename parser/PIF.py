@@ -7,5 +7,5 @@ class PIF:
             result += str(i)+'\n'
         return result
     def add(self, id, chunk):
-        self.content.append(str([id,str(chunk)]))
+        self.content.append((str(chunk),id))
     

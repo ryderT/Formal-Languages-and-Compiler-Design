@@ -17,12 +17,12 @@ class SymbolTable:
     def __str__(self):
         return self.preoderTraversal(self.root)
         
-    def preoderTraversal(self,node:Node):
+    def preoderTraversal(self,node):
         string = ""
         if node != None:
             string += str(node) + ': '
-            string += 'left: ' + str(node.left) + ' '
-            string += 'right: ' + str(node.right) + ' '
+            string += 'left node --> ' + str(node.left) + '; '
+            string += 'right node --> ' + str(node.right) + '; '
             string += '\n'
             string += self.preoderTraversal(node.left)
             string += self.preoderTraversal(node.right)
@@ -58,7 +58,7 @@ class SymbolTable:
         node = self.root
         while node is not None:
             if node.info == value:
-                return node
+                return node.id
             elif node.info < value:
                 node = node.left
             else:
